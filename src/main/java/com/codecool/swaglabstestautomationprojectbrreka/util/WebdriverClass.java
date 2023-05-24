@@ -1,4 +1,4 @@
-package com.codecool.swaglabstestautomationprojectbrreka.init;
+package com.codecool.swaglabstestautomationprojectbrreka.util;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

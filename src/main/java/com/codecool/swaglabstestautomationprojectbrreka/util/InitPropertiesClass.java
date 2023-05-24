@@ -1,4 +1,4 @@
-package com.codecool.swaglabstestautomationprojectbrreka.init;
+package com.codecool.swaglabstestautomationprojectbrreka.util;
 
 import java.io.*;
 import java.util.*;
