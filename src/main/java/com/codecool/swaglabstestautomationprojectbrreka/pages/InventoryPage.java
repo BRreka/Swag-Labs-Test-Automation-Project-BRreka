@@ -14,6 +14,12 @@ public class InventoryPage {
     @FindBy(xpath = "//a[@class='shopping_cart_link']")
     private WebElement shoppingCartLink;
 
+    @FindBy(xpath = "//button[@id='react-burger-menu-btn']")
+    private WebElement burgerMenuButton;
+
+    @FindBy(xpath = "//a[@id='logout_sidebar_link']")
+    private WebElement logOutButton;
+
 
     //item links
     @FindBy(xpath = "//div[@text='Sauce Labs Backpack']")
@@ -93,10 +99,24 @@ public class InventoryPage {
         addAllTheThingsTShirtToCartButton.click();
     }
 
+    public void clickHamburgerMenu() {
+        burgerMenuButton.click();
+    }
+
+    public void clickLogoutButton() {
+        logOutButton.click();
+    }
+
     //add one item to cart
     public void addItemToCartAndClickPay() {
         addBackpackToCart();
         clickShoppingCart();
+    }
+
+    //click on logout after everything
+    public void clickOnMenuAndLogout() {
+        clickHamburgerMenu();
+        clickLogoutButton();
     }
 
 }
