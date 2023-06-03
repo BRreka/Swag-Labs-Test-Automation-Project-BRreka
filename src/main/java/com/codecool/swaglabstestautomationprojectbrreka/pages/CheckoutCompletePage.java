@@ -22,4 +22,21 @@ public class CheckoutCompletePage {
         WebDriver driver = WebdriverClass.getInstance();
         PageFactory.initElements(driver,this);
     }
+
+    public String getCheckoutCompletePageTitle() {
+        return checkoutCompletePageTitle.getText();
+    }
+
+    public void clickBackHomeBtn() {
+        backHomeBtn.click();
+    }
+
+    public String getCompleteHeaderText() {
+        return completeHeader.getText();
+    }
+
+    public String getCompleteText() {
+        return completeText.getText();
+    }
+
 }
