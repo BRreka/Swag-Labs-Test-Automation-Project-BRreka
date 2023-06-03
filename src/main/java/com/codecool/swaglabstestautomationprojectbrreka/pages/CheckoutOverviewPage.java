@@ -19,4 +19,8 @@ public class CheckoutOverviewPage {
     private WebElement finishBtn;
 
 
+    public CheckoutOverviewPage() {
+        WebDriver driver = WebdriverClass.getInstance();
+        PageFactory.initElements(driver,this);
+    }
 }
