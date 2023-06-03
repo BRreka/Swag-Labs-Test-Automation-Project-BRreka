@@ -4,10 +4,10 @@ import com.codecool.swaglabstestautomationprojectbrreka.util.WebdriverClass;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
 
-public class CheckoutPage {
+public class CheckoutInfoPage {
 
     @FindBy(xpath = "//span[text()='Checkout: Your Information']")
-    private WebElement checkoutPageTitle;
+    private WebElement checkoutInfoPageTitle;
 
     @FindBy(xpath = "//button[@id='cancel']")
     private WebElement cancelBtn;
@@ -27,13 +27,13 @@ public class CheckoutPage {
     @FindBy(xpath = "//h3[text()='Error: First Name is required']")
     private WebElement errorMessage;
 
-    public CheckoutPage() {
+    public CheckoutInfoPage() {
         WebDriver driver = WebdriverClass.getInstance();
         PageFactory.initElements(driver,this);
     }
 
-    public String getCheckoutPageTitle() {
-        return checkoutPageTitle.getText();
+    public String getCheckoutInfoPageTitle() {
+        return checkoutInfoPageTitle.getText();
     }
 
     public String getErrorMessage() {
