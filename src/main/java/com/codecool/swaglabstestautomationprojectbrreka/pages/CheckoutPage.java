@@ -31,4 +31,33 @@ public class CheckoutPage {
         WebDriver driver = WebdriverClass.getInstance();
         PageFactory.initElements(driver,this);
     }
+
+    public String getCheckoutPageTitle() {
+        return checkoutPageTitle.getText();
+    }
+
+    public String getErrorMessage() {
+        return errorMessage.getText();
+    }
+
+    public void enterFirstName(String firstNameString) {
+        firstNameField.sendKeys(firstNameString);
+    }
+
+    public void enterLastName(String lastNameString) {
+        lastNameField.sendKeys(lastNameString);
+    }
+
+    public void enterPostalCode(String postalCodeString) {
+        zipCodeField.sendKeys(postalCodeString);
+    }
+
+    public void clickContinueBtn() {
+        continueBtn.click();
+    }
+
+    public void clickCancelBtn() {
+        cancelBtn.click();
+    }
+
 }
