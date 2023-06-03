@@ -18,9 +18,25 @@ public class CheckoutOverviewPage {
     @FindBy(xpath = "//button[@id='finish']")
     private WebElement finishBtn;
 
-
     public CheckoutOverviewPage() {
         WebDriver driver = WebdriverClass.getInstance();
         PageFactory.initElements(driver,this);
     }
+
+    public String getOverviewPageTitle() {
+        return checkoutOverviewPageTitle.getText();
+    }
+
+    public String getInventoryItemName() {
+        return inventoryItemName.getText();
+    }
+
+    public void clickCancelBtn() {
+        cancelBtn.click();
+    }
+
+    public void clickFinishBtn() {
+        finishBtn.click();
+    }
+
 }
