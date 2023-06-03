@@ -60,4 +60,11 @@ public class CheckoutPage {
         cancelBtn.click();
     }
 
+    public void checkoutSuccessfully(String firstNameString, String lastNameString, String postalCodeString) {
+        enterFirstName(firstNameString);
+        enterLastName(lastNameString);
+        enterPostalCode(postalCodeString);
+        clickContinueBtn();
+    }
+
 }
