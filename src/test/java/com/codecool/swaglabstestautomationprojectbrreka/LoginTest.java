@@ -2,10 +2,9 @@ package com.codecool.swaglabstestautomationprojectbrreka;
 
 import com.codecool.swaglabstestautomationprojectbrreka.pages.LoginPage;
 import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 
-public class LoginPageTest {
+public class LoginTest {
     LoginPage mainPage = new LoginPage();
 
     @BeforeAll
