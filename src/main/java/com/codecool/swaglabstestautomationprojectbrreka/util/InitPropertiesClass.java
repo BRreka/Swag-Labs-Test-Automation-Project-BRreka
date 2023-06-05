@@ -8,7 +8,7 @@ public class InitPropertiesClass {
 
     private InitPropertiesClass() {}
 
-    public Properties getInstance() {
+    public static Properties getInstance() {
         Properties prop = properties;
         if(prop == null) {
             synchronized (InitPropertiesClass.class) {
