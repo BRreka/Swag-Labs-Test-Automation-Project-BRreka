@@ -18,7 +18,7 @@ public class CartPage {
     private WebElement checkoutBtn;
 
     @FindBy(xpath = "//button[text()='Remove']")
-    private WebElement removeBtn;
+    private List<WebElement> removeBtnList;
 
     public CartPage() {
         WebDriver driver = WebdriverClass.getInstance();
@@ -37,8 +37,9 @@ public class CartPage {
         checkoutBtn.click();
     }
 
-    public void clickRemoveBtn() {
-        removeBtn.click();
+    public void clickRemoveBtn(String elementToRemove) {
+        WebElement removeThis = removeBtnList.stream().filter(element -> elementToRemove.equals(element.getText())).findFirst().orElseThrow();
+        removeThis.click();
     }
 
 }
