@@ -23,9 +23,9 @@ public class LoginTest {
 
     public static Stream<Arguments> provideStringsForLoginWith3DifferentUsers() {
         return Stream.of(
-                Arguments.of(properties.getProperty("standardUserName")),
-                Arguments.of(properties.getProperty("problemUserName")),
-                Arguments.of(properties.getProperty("lockedOutUserName"))
+                Arguments.of(properties.getProperty("standardUserName"), properties.getProperty("password")),
+                Arguments.of(properties.getProperty("problemUserName"), properties.getProperty("password")),
+                Arguments.of(properties.getProperty("lockedOutUserName"), properties.getProperty("password"))
         );
     }
 
@@ -42,8 +42,8 @@ public class LoginTest {
 
     @ParameterizedTest
     @MethodSource("provideStringsForLoginWith3DifferentUsers")
-    public void testLoginWith3DifferentUsers(String userName) {
-        mainPage.login(userName, properties.getProperty("password"));
+    public void testLoginWith3DifferentUsers(String userName, String password) {
+        mainPage.login(userName, password);
         assertEquals("Swag Labs", inventoryPage.getPageTitleText());
         inventoryPage.clickHamburgerMenu();
         assertTrue(inventoryPage.doesLogoutButtonExist());
