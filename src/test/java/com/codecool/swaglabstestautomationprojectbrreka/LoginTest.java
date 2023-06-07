@@ -3,9 +3,13 @@ package com.codecool.swaglabstestautomationprojectbrreka;
 import com.codecool.swaglabstestautomationprojectbrreka.pages.*;
 import com.codecool.swaglabstestautomationprojectbrreka.util.InitPropertiesClass;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.*;
+import org.junit.jupiter.params.provider.*;
+
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.Properties;
+import java.util.*;
+import java.util.stream.*;
 
 
 public class LoginTest {
@@ -16,6 +20,15 @@ public class LoginTest {
     static CheckoutCompletePage checkoutCompletePage;
     static CheckoutOverviewPage checkoutOverviewPage;
     static Properties properties;
+
+    public static Stream<Arguments> provideStringsForLogin() {
+        return Stream.of(
+                Arguments.of(properties.getProperty("standardUserName")),
+                Arguments.of(properties.getProperty("problemUserName")),
+                Arguments.of(properties.getProperty("lockedOutUserName"))
+        );
+    }
+
     @BeforeAll
     public static void setUpAll() {
         mainPage = new LoginPage();
@@ -27,11 +40,10 @@ public class LoginTest {
         properties = InitPropertiesClass.getInstance();
     }
 
-
-
-    @Test
-    public void login() {
-        mainPage.login(properties.getProperty("standardUserName"), properties.getProperty("password"));
+    @ParameterizedTest
+    @MethodSource("provideStringsForLogin")
+    public void testLoginWith3DifferentUsers(String userName) {
+        mainPage.login(userName, properties.getProperty("password"));
         assertEquals("Swag Labs", inventoryPage.getPageTitleText());
         inventoryPage.clickHamburgerMenu();
         assertTrue(inventoryPage.doesLogoutButtonExist());
