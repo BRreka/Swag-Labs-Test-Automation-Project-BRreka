@@ -3,6 +3,7 @@ package com.codecool.swaglabstestautomationprojectbrreka;
 import com.codecool.swaglabstestautomationprojectbrreka.pages.*;
 import com.codecool.swaglabstestautomationprojectbrreka.util.InitPropertiesClass;
 import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Properties;
 
@@ -31,6 +32,10 @@ public class LoginTest {
     @Test
     public void login() {
         mainPage.login(properties.getProperty("standardUserName"), properties.getProperty("password"));
+        assertEquals("Swag Labs", inventoryPage.getPageTitleText());
+        inventoryPage.clickHamburgerMenu();
+        assertTrue(inventoryPage.doesLogoutButtonExist());
+        inventoryPage.clickLogoutButton();
     }
 
     @AfterEach

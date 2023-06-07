@@ -1,5 +1,6 @@
 package com.codecool.swaglabstestautomationprojectbrreka.pages;
 
+import com.codecool.swaglabstestautomationprojectbrreka.util.WaitClass;
 import com.codecool.swaglabstestautomationprojectbrreka.util.WebdriverClass;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
@@ -101,6 +102,11 @@ public class InventoryPage {
 
     public void clickHamburgerMenu() {
         burgerMenuButton.click();
+    }
+
+    public boolean doesLogoutButtonExist() {
+        WaitClass.waitUntilClickable(driver,logOutButton);
+        return logOutButton.isDisplayed();
     }
 
     public void clickLogoutButton() {
