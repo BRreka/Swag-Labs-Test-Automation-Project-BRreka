@@ -21,7 +21,7 @@ public class LoginTest {
     static CheckoutOverviewPage checkoutOverviewPage;
     static Properties properties;
 
-    public static Stream<Arguments> provideStringsForLogin() {
+    public static Stream<Arguments> provideStringsForLoginWith3DifferentUsers() {
         return Stream.of(
                 Arguments.of(properties.getProperty("standardUserName")),
                 Arguments.of(properties.getProperty("problemUserName")),
@@ -41,7 +41,7 @@ public class LoginTest {
     }
 
     @ParameterizedTest
-    @MethodSource("provideStringsForLogin")
+    @MethodSource("provideStringsForLoginWith3DifferentUsers")
     public void testLoginWith3DifferentUsers(String userName) {
         mainPage.login(userName, properties.getProperty("password"));
         assertEquals("Swag Labs", inventoryPage.getPageTitleText());
