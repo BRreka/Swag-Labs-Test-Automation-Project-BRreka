@@ -21,6 +21,14 @@ public class LoginTest {
     static CheckoutOverviewPage checkoutOverviewPage;
     static Properties properties;
 
+    public static Stream<Arguments> provideStringsForLoginWith3DifferentKindOfData() {
+        return Stream.of(
+                Arguments.of(properties.getProperty("standardUserName"), properties.getProperty("password")),
+                Arguments.of(properties.getProperty("standardUserName"), properties.getProperty("wrongPassword")),
+                Arguments.of(properties.getProperty("standardUserName"), "")
+        );
+    }
+
     public static Stream<Arguments> provideStringsForLoginWith3DifferentUsers() {
         return Stream.of(
                 Arguments.of(properties.getProperty("standardUserName"), properties.getProperty("password")),
@@ -38,6 +46,16 @@ public class LoginTest {
         checkoutCompletePage = new CheckoutCompletePage();
         checkoutOverviewPage = new CheckoutOverviewPage();
         properties = InitPropertiesClass.getInstance();
+    }
+
+    @ParameterizedTest
+    @MethodSource("provideStringsForLoginWith3DifferentKindOfData")
+    public void testLoginWith3DifferentKindOfData(String userName, String password) {
+        mainPage.login(userName, password);
+        assertEquals("Swag Labs", inventoryPage.getPageTitleText());
+        inventoryPage.clickHamburgerMenu();
+        assertTrue(inventoryPage.doesLogoutButtonExist());
+        inventoryPage.clickLogoutButton();
     }
 
     @ParameterizedTest
