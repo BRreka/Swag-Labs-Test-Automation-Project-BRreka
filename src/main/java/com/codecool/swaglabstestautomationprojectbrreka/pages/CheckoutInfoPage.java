@@ -6,6 +6,7 @@ import org.openqa.selenium.support.*;
 
 public class CheckoutInfoPage {
 
+    private final WebDriver driver = WebdriverClass.getInstance();
     @FindBy(xpath = "//span[text()='Checkout: Your Information']")
     private WebElement checkoutInfoPageTitle;
 
@@ -28,7 +29,6 @@ public class CheckoutInfoPage {
     private WebElement errorMessage;
 
     public CheckoutInfoPage() {
-        WebDriver driver = WebdriverClass.getInstance();
         PageFactory.initElements(driver,this);
     }
 

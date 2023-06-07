@@ -8,6 +8,7 @@ import java.util.*;
 
 public class CheckoutOverviewPage {
 
+    private final WebDriver driver = WebdriverClass.getInstance();
     @FindBy(xpath = "//span[text()='Checkout: Overview']")
     private WebElement checkoutOverviewPageTitle;
 
@@ -21,7 +22,6 @@ public class CheckoutOverviewPage {
     private WebElement finishBtn;
 
     public CheckoutOverviewPage() {
-        WebDriver driver = WebdriverClass.getInstance();
         PageFactory.initElements(driver,this);
     }
 

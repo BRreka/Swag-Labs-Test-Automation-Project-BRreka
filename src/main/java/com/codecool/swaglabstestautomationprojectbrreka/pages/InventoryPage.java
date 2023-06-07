@@ -9,6 +9,8 @@ import java.util.*;
 
 public class InventoryPage {
 
+    private final WebDriver driver = WebdriverClass.getInstance();
+
     @FindBy(xpath = "//div[@class='app_logo']")
     private WebElement pageTitle;
 
@@ -62,7 +64,6 @@ public class InventoryPage {
 
 
     public InventoryPage() {
-        WebDriver driver = WebdriverClass.getInstance();
         PageFactory.initElements(driver,this);
     }
 

@@ -8,6 +8,7 @@ import java.util.*;
 
 public class CartPage {
 
+    private final WebDriver driver = WebdriverClass.getInstance();
     @FindBy(xpath = "//span[text()='Your Cart']")
     private WebElement yourCartTitle;
 
@@ -21,7 +22,6 @@ public class CartPage {
     private List<WebElement> removeBtnList;
 
     public CartPage() {
-        WebDriver driver = WebdriverClass.getInstance();
         PageFactory.initElements(driver,this);
     }
 

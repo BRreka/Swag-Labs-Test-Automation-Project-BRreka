@@ -6,6 +6,7 @@ import org.openqa.selenium.support.*;
 
 public class CheckoutCompletePage {
 
+    private final WebDriver driver = WebdriverClass.getInstance();
     @FindBy(xpath = "//span[text()='Checkout: Complete!']")
     private WebElement checkoutCompletePageTitle;
 
@@ -19,7 +20,6 @@ public class CheckoutCompletePage {
     private WebElement completeText;
 
     public CheckoutCompletePage() {
-        WebDriver driver = WebdriverClass.getInstance();
         PageFactory.initElements(driver,this);
     }
 
