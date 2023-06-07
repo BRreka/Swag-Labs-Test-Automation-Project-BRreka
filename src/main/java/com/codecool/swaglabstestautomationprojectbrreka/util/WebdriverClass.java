@@ -9,7 +9,6 @@ import java.util.Properties;
 
 public class WebdriverClass {
     private static volatile WebDriver webDriverInstance;
-    //private static final Properties prop = InitPropertiesClass.getInstance();
 
     private WebdriverClass() {}
 
