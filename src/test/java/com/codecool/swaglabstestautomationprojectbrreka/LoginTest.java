@@ -26,9 +26,7 @@ public class LoginTest {
         properties = InitPropertiesClass.getInstance();
     }
 
-    @BeforeEach
-    public void setUp() {
-    }
+
 
     @Test
     public void login() {
