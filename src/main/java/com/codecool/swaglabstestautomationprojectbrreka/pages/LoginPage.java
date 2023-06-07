@@ -19,6 +19,9 @@ public class LoginPage {
     @FindBy(xpath = "//input[@name='login-button']")
     private WebElement loginButton;
 
+    @FindBy(css = "[data-test='error']")
+    private WebElement errorMessage;
+
     public LoginPage() {
         PageFactory.initElements(driver,this);
     }
@@ -39,6 +42,10 @@ public class LoginPage {
 
     private void clickLoginButton() {
         loginButton.click();
+    }
+
+    public String getErrorMessage() {
+        return errorMessage.getText();
     }
 
     //main method to take care of the whole process on the login page
