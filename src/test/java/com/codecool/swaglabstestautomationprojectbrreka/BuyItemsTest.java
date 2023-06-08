@@ -30,10 +30,10 @@ public class BuyItemsTest {
 
     @Test
     public void testBuyingSauceLabsBackpackAndLogout() {
+        //thorough test checking titles
         mainPage.login(properties.getProperty("standardUserName"), properties.getProperty("password"));
         assertEquals("Swag Labs", inventoryPage.getPageTitleText());
-        inventoryPage.addBackpackToCart();
-        inventoryPage.clickShoppingCart();
+        inventoryPage.addBackpackToCartAndClickCart();
         assertEquals("Your Cart",cartPage.getCartTitle());
         cartPage.clickCheckoutBtn();
         assertEquals("Checkout: Your Information", checkoutInfoPage.getCheckoutInfoPageTitle());
@@ -45,8 +45,7 @@ public class BuyItemsTest {
         assertEquals("Thank you for your order!",checkoutCompletePage.getCompleteHeaderText());
         assertEquals("Your order has been dispatched, and will arrive just as fast as the pony can get there!",checkoutCompletePage.getCompleteText());
         checkoutCompletePage.clickBackHomeBtn();
-        inventoryPage.clickHamburgerMenu();
-        inventoryPage.clickLogoutButton();
+        inventoryPage.clickOnMenuAndLogout();
         assertTrue(mainPage.doesLoginButtonExist());
     }
 
