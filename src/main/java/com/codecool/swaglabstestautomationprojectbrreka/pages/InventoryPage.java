@@ -125,11 +125,20 @@ public class InventoryPage {
     }
 
     //add one item to cart
-    public void addItemToCartAndClickPay() {
+    public void addBackpackToCartAndClickCart() {
         addBackpackToCart();
         clickShoppingCart();
     }
 
+    public void addAllItemsAndClickCart() {
+        addBackpackToCart();
+        addBikeLightToCart();
+        addBoltTShirtToCart();
+        addFleeceJacketToCart();
+        addOnesieToCart();
+        addAllTheThingsTShirtToCart();
+        clickShoppingCart();
+    }
     //click on logout after everything
     public void clickOnMenuAndLogout() {
         clickHamburgerMenu();

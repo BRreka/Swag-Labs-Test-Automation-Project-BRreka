@@ -50,4 +50,16 @@ public class BuyItemsTest {
         assertTrue(mainPage.doesLoginButtonExist());
     }
 
+    @Test
+    public void testBuyingMultipleItemsAndLogout() {
+        mainPage.login(properties.getProperty("standardUserName"), properties.getProperty("password"));
+        inventoryPage.addAllItemsAndClickCart();
+        cartPage.clickCheckoutBtn();
+        checkoutInfoPage.checkoutSuccessfully("Standard", "User", "1234");
+        assertEquals(List.of("Sauce Labs Backpack", "Sauce Labs Bike Light", "Sauce Labs Bolt T-Shirt", "Sauce Labs Fleece Jacket", "Sauce Labs Onesie", "Test.allTheThings() T-Shirt (Red)"),checkoutOverviewPage.getInventoryItemNameList());
+        checkoutOverviewPage.clickFinishBtn();
+        checkoutCompletePage.clickBackHomeBtn();
+        inventoryPage.clickOnMenuAndLogout();
+        assertTrue(mainPage.doesLoginButtonExist());
+    }
 }
