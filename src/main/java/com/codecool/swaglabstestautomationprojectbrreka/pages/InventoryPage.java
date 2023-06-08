@@ -68,49 +68,59 @@ public class InventoryPage {
     }
 
     public String getPageTitleText() {
+        WaitClass.waitUntilVisible(driver, pageTitle);
         return pageTitle.getText();
     }
 
     public void clickShoppingCart() {
+        WaitClass.waitUntilClickable(driver, shoppingCartLink);
         shoppingCartLink.click();
     }
 
 
     //add things to cart separately
     public void addBackpackToCart() {
+        WaitClass.waitUntilClickable(driver,addBackPackToCartButton);
         addBackPackToCartButton.click();
     }
 
     public void addBikeLightToCart() {
+        WaitClass.waitUntilClickable(driver, addBikeLightToCartButton);
         addBikeLightToCartButton.click();
     }
 
     public void addBoltTShirtToCart() {
+        WaitClass.waitUntilClickable(driver, addBoltTShirtToCartButton);
         addBoltTShirtToCartButton.click();
     }
 
     public void addFleeceJacketToCart() {
+        WaitClass.waitUntilClickable(driver, addFleeceJacketToCartButton);
         addFleeceJacketToCartButton.click();
     }
 
     public void addOnesieToCart() {
+        WaitClass.waitUntilClickable(driver, addOnesieToCartButton);
         addOnesieToCartButton.click();
     }
 
     public void addAllTheThingsTShirtToCart() {
+        WaitClass.waitUntilClickable(driver, addAllTheThingsTShirtToCartButton);
         addAllTheThingsTShirtToCartButton.click();
     }
 
     public void clickHamburgerMenu() {
+        WaitClass.waitUntilClickable(driver, burgerMenuButton);
         burgerMenuButton.click();
     }
 
     public boolean doesLogoutButtonExist() {
-        WaitClass.waitUntilClickable(driver,logOutButton);
+        WaitClass.waitUntilVisible(driver,logOutButton);
         return logOutButton.isDisplayed();
     }
 
     public void clickLogoutButton() {
+        WaitClass.waitUntilClickable(driver, logOutButton);
         logOutButton.click();
     }
 

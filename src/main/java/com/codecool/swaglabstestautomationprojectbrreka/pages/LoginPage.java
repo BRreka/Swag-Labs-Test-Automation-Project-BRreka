@@ -1,5 +1,6 @@
 package com.codecool.swaglabstestautomationprojectbrreka.pages;
 
+import com.codecool.swaglabstestautomationprojectbrreka.util.WaitClass;
 import com.codecool.swaglabstestautomationprojectbrreka.util.WebdriverClass;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
@@ -42,6 +43,11 @@ public class LoginPage {
 
     private void clickLoginButton() {
         loginButton.click();
+    }
+
+    public boolean doesLoginButtonExist() {
+        WaitClass.waitUntilClickable(driver, loginButton);
+        return loginButton.isDisplayed();
     }
 
     public String getErrorMessage() {

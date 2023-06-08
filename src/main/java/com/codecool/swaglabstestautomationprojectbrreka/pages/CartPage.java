@@ -1,5 +1,6 @@
 package com.codecool.swaglabstestautomationprojectbrreka.pages;
 
+import com.codecool.swaglabstestautomationprojectbrreka.util.WaitClass;
 import com.codecool.swaglabstestautomationprojectbrreka.util.WebdriverClass;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
@@ -26,14 +27,17 @@ public class CartPage {
     }
 
     public String getCartTitle() {
+        WaitClass.waitUntilVisible(driver, yourCartTitle);
         return yourCartTitle.getText();
     }
 
     public void clickContinueShopping() {
+        WaitClass.waitUntilClickable(driver, continueShoppingBtn);
         continueShoppingBtn.click();
     }
 
     public void clickCheckoutBtn() {
+        WaitClass.waitUntilClickable(driver, checkoutBtn);
         checkoutBtn.click();
     }
 

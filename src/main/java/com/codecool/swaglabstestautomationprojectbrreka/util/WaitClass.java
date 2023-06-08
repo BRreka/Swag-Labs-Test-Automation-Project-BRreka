@@ -10,6 +10,8 @@ public class WaitClass {
         return new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(element));
     }
 
-
+    public static WebElement waitUntilVisible(WebDriver driver, WebElement element) {
+        return new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(element));
+    }
 
 }
