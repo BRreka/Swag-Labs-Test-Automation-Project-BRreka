@@ -61,4 +61,20 @@ public class BuyItemsTest {
         inventoryPage.clickOnMenuAndLogout();
         assertTrue(mainPage.doesLoginButtonExist());
     }
+
+    @Test
+    public void testBuyingTwoItemsButDeletingOne() {
+        mainPage.login(properties.getProperty("standardUserName"), properties.getProperty("password"));
+        inventoryPage.addFleeceJacketAndOnesieAndClickCart();
+        cartPage.clickRemoveBtn("Sauce Labs Onesie");
+        cartPage.clickCheckoutBtn();
+        checkoutInfoPage.checkoutSuccessfully("Standard", "User", "1234");
+        assertEquals(List.of("Sauce Labs Fleece Jacket"),checkoutOverviewPage.getInventoryItemNameList());
+        checkoutOverviewPage.clickFinishBtn();
+        checkoutCompletePage.clickBackHomeBtn();
+        inventoryPage.clickOnMenuAndLogout();
+        assertTrue(mainPage.doesLoginButtonExist());
+    }
+
+
 }

@@ -130,6 +130,12 @@ public class InventoryPage {
         clickShoppingCart();
     }
 
+    public void addFleeceJacketAndOnesieAndClickCart() {
+        addFleeceJacketToCart();
+        addOnesieToCart();
+        clickShoppingCart();
+    }
+
     public void addAllItemsAndClickCart() {
         addBackpackToCart();
         addBikeLightToCart();
