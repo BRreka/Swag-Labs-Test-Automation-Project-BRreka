@@ -6,6 +6,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
 
 import java.util.*;
+import java.util.stream.*;
 
 public class CartPage {
 
@@ -21,6 +22,9 @@ public class CartPage {
 
     @FindBy(xpath = "//button[text()='Remove']")
     private List<WebElement> removeBtnList;
+
+    @FindBy(xpath = "//div[@class='inventory_item_name']")
+    private List<WebElement> itemList;
 
     public CartPage() {
         PageFactory.initElements(driver,this);
@@ -42,8 +46,16 @@ public class CartPage {
     }
 
     public void clickRemoveBtn(String elementToRemove) {
-        WebElement removeThis = removeBtnList.stream().filter(element -> elementToRemove.equals(element.getText())).findFirst().orElseThrow();
-        removeThis.click();
+        int index = getElementNumberToRemove(elementToRemove);
+        WebElement removeElement = removeBtnList.get(index);
+        removeElement.click();
+    }
+
+    private int getElementNumberToRemove(String elementToRemove) {
+        return IntStream.range(0, itemList.size())
+                .filter(in -> itemList.get(in).getText().equals(elementToRemove))
+                .findFirst()
+                .orElseThrow();
     }
 
 }

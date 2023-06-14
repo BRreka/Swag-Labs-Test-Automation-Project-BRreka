@@ -39,7 +39,7 @@ public class BuyItemsTest {
         assertEquals("Checkout: Your Information", checkoutInfoPage.getCheckoutInfoPageTitle());
         checkoutInfoPage.checkoutSuccessfully("Standard", "User", "1234");
         assertEquals("Checkout: Overview", checkoutOverviewPage.getOverviewPageTitle());
-        assertEquals(List.of("Sauce Labs Backpack"),checkoutOverviewPage.getInventoryItemNameList()); //bork
+        assertEquals(List.of("Sauce Labs Backpack"),checkoutOverviewPage.getInventoryItemNameList());
         checkoutOverviewPage.clickFinishBtn();
         assertEquals("Checkout: Complete!", checkoutCompletePage.getCheckoutCompletePageTitle());
         assertEquals("Thank you for your order!",checkoutCompletePage.getCompleteHeaderText());
