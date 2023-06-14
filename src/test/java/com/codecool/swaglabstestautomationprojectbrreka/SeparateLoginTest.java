@@ -16,9 +16,12 @@ public class SeparateLoginTest {
 
     @BeforeAll
     public static void setUpAll() {
+        properties = InitPropertiesClass.getInstance();
+    }
+    @BeforeEach
+    public void setUp() {
         mainPage = new LoginPage();
         inventoryPage = new InventoryPage();
-        properties = InitPropertiesClass.getInstance();
     }
 
     @Test

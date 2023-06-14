@@ -20,13 +20,17 @@ public class BuyItemsTest {
 
     @BeforeAll
     public static void setUpAll() {
+        properties = InitPropertiesClass.getInstance();
+    }
+
+    @BeforeEach
+    public void setUp() {
         mainPage = new LoginPage();
         inventoryPage = new InventoryPage();
         cartPage = new CartPage();
         checkoutInfoPage = new CheckoutInfoPage();
         checkoutCompletePage = new CheckoutCompletePage();
         checkoutOverviewPage = new CheckoutOverviewPage();
-        properties = InitPropertiesClass.getInstance();
     }
 
     @Test

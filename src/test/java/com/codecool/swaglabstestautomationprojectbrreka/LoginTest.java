@@ -18,6 +18,16 @@ public class LoginTest {
     static InventoryPage inventoryPage;
     static Properties properties;
 
+    @BeforeAll
+    public static void setUpAll() {
+        properties = InitPropertiesClass.getInstance();
+    }
+    @BeforeEach
+    public void setUp() {
+        mainPage = new LoginPage();
+        inventoryPage = new InventoryPage();
+    }
+
     public static Stream<Arguments> provideStringsForLoginWith3DifferentKindOfData() {
         return Stream.of(
                 Arguments.of(properties.getProperty("standardUserName"), properties.getProperty("password")),
@@ -32,13 +42,6 @@ public class LoginTest {
                 Arguments.of(properties.getProperty("problemUserName"), properties.getProperty("password")),
                 Arguments.of(properties.getProperty("lockedOutUserName"), properties.getProperty("password"))
         );
-    }
-
-    @BeforeAll
-    public static void setUpAll() {
-        mainPage = new LoginPage();
-        inventoryPage = new InventoryPage();
-        properties = InitPropertiesClass.getInstance();
     }
 
     @ParameterizedTest
