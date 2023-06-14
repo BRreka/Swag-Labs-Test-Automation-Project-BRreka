@@ -14,6 +14,12 @@ import java.util.stream.*;
 
 
 public class LoginTest {
+
+    /*
+    login with 3 different kind of data should pass for first parameters, and fail for the rest
+    login with 3 kind of users should pass for the first two parameters, and only fail for locked out user
+     */
+
     static LoginPage mainPage;
     static InventoryPage inventoryPage;
     static Properties properties;

@@ -10,6 +10,11 @@ import java.util.*;
 
 public class BuyItemsTest {
 
+    /*
+    tests present in this class should pass
+    except for the last one with problem user
+     */
+
     static LoginPage mainPage;
     static InventoryPage inventoryPage;
     static CartPage cartPage;

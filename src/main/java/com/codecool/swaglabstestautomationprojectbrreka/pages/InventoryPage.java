@@ -5,8 +5,6 @@ import com.codecool.swaglabstestautomationprojectbrreka.util.WebdriverClass;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
 
-import java.util.*;
-
 public class InventoryPage {
 
     private final WebDriver driver = WebdriverClass.getInstance();

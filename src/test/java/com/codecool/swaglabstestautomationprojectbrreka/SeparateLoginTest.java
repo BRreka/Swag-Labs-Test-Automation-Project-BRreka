@@ -10,6 +10,11 @@ import java.util.*;
 
 public class SeparateLoginTest {
 
+    /*
+    all the tests in this class
+    should pass without exception
+     */
+
     static LoginPage mainPage;
     static InventoryPage inventoryPage;
     static Properties properties;
