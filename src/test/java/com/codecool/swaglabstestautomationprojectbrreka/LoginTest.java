@@ -16,10 +16,6 @@ import java.util.stream.*;
 public class LoginTest {
     static LoginPage mainPage;
     static InventoryPage inventoryPage;
-    static CartPage cartPage;
-    static CheckoutInfoPage checkoutInfoPage;
-    static CheckoutCompletePage checkoutCompletePage;
-    static CheckoutOverviewPage checkoutOverviewPage;
     static Properties properties;
 
     public static Stream<Arguments> provideStringsForLoginWith3DifferentKindOfData() {
@@ -42,10 +38,6 @@ public class LoginTest {
     public static void setUpAll() {
         mainPage = new LoginPage();
         inventoryPage = new InventoryPage();
-        cartPage = new CartPage();
-        checkoutInfoPage = new CheckoutInfoPage();
-        checkoutCompletePage = new CheckoutCompletePage();
-        checkoutOverviewPage = new CheckoutOverviewPage();
         properties = InitPropertiesClass.getInstance();
     }
 
