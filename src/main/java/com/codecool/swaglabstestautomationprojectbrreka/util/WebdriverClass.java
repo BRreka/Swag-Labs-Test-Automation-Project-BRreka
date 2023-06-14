@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.util.Properties;
 
 public class WebdriverClass {
-    private static volatile WebDriver webDriverInstance;
+    private static volatile WebDriver webDriverInstance = null;
 
     private WebdriverClass() {}
 
@@ -26,5 +26,10 @@ public class WebdriverClass {
             }
         }
         return driver;
+    }
+
+    public static void quit() {
+        webDriverInstance.quit();
+        webDriverInstance=null;
     }
 }

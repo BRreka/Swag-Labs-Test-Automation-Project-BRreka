@@ -2,6 +2,7 @@ package com.codecool.swaglabstestautomationprojectbrreka;
 
 import com.codecool.swaglabstestautomationprojectbrreka.pages.*;
 import com.codecool.swaglabstestautomationprojectbrreka.util.InitPropertiesClass;
+import com.codecool.swaglabstestautomationprojectbrreka.util.WebdriverClass;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -45,6 +46,11 @@ public class SeparateLoginTest {
     public void testLockedOutUserLogin() {
         mainPage.login(properties.getProperty("lockedOutUserName"), properties.getProperty("password"));
         assertEquals("Epic sadface: Sorry, this user has been locked out.", mainPage.getErrorMessage());
+    }
+
+    @AfterEach
+    public void tearDown() {
+        WebdriverClass.quit();
     }
 
 }

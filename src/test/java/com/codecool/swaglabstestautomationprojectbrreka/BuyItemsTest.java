@@ -2,6 +2,7 @@ package com.codecool.swaglabstestautomationprojectbrreka;
 
 import com.codecool.swaglabstestautomationprojectbrreka.pages.*;
 import com.codecool.swaglabstestautomationprojectbrreka.util.InitPropertiesClass;
+import com.codecool.swaglabstestautomationprojectbrreka.util.WebdriverClass;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -106,6 +107,11 @@ public class BuyItemsTest {
         checkoutCompletePage.clickBackHomeBtn();
         inventoryPage.clickOnMenuAndLogout();
         assertTrue(mainPage.doesLoginButtonExist());
+    }
+
+    @AfterEach
+    public void tearDown() {
+        WebdriverClass.quit();
     }
 
 }
