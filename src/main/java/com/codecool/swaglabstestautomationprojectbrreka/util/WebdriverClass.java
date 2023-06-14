@@ -1,11 +1,12 @@
-package com.codecool.swaglabstestautomationprojectbrreka.init;
+package com.codecool.swaglabstestautomationprojectbrreka.util;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class WebdriverClass {
-    private static volatile WebDriver webDriverInstance;
+    private static volatile WebDriver webDriverInstance = null;
 
     private WebdriverClass() {}
 
@@ -15,6 +16,7 @@ public class WebdriverClass {
             synchronized (WebdriverClass.class) {
                 driver = webDriverInstance;
                 if(driver == null) {
+                    WebDriverManager.chromedriver().setup();
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--remote-allow-origins=*");
                     webDriverInstance = driver = new ChromeDriver(options);
@@ -22,5 +24,10 @@ public class WebdriverClass {
             }
         }
         return driver;
+    }
+
+    public static void quit() {
+        webDriverInstance.quit();
+        webDriverInstance=null;
     }
 }
