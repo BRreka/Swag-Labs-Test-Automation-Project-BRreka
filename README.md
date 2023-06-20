@@ -17,11 +17,21 @@ Some tests are set up to fail on purpose, it is stated which in each case in the
 ## Installation
 
 1. clone repository <br>
-`git clone git@github.com:BRreka/Swag-Labs-Test-Automation-Project-BRreka.git`
+```
+git clone git@github.com:BRreka/Swag-Labs-Test-Automation-Project-BRreka.git
+```
 2. after cloning, you need to create a config.properties file in "config" package, this method was used for hiding usernames and passwords
-   + `create a new package in "swaglabstestautomationprojectbrreka" and call it "config"`
-   + `then create a new file and call it "config.properties"`
-   + `this is how it should look like:` <br> 
+
+```
+create a new package in "swaglabstestautomationprojectbrreka" and call it "config"
+```
+
+```
+then create a new file and call it "config.properties"
+```
+
+this is how it should look like:
+
    ![Screenshot of placing config.properties file](config-file-structure.png)
 
 3. create the following variables:
