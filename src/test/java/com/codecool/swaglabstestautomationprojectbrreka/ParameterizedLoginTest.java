@@ -13,7 +13,7 @@ import java.util.*;
 import java.util.stream.*;
 
 
-public class LoginTest {
+public class ParameterizedLoginTest {
 
     /*
     login with 3 different kind of data should pass for first parameters, and fail for the rest
