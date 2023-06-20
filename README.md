@@ -1,11 +1,11 @@
-# Swag Labs Test Automation Project :sparkles: :shirt: :sparkles: :sunglasses:
+# Swag Labs Test Automation Project :shirt: :sparkles: :sunglasses:
 
 The goal of this project was to practice automated testing using the Page-Object Model (POM). <br>
 It implements automated tests for the [Swag Labs](https://www.saucedemo.com/) website, which is a simple web shop to practice testing.
 
-The tests were written separately for testing the whole website functionality (buying items and paying) and login. 
+The tests were written separately for the whole website functionality (buying items and paying) and login. 
 The login has two kind of tests with almost identical data, to practice both parameterized tests and separate test for all of them.
-Some tests are set up to fail on purpose, it is stated which in each cases in the comments within the test classes.
+Some tests are set up to fail on purpose, it is stated which in each case in the comments within the test classes.
 
 ## Technologies used
 + Java 17
