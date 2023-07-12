@@ -23,6 +23,14 @@ public class BuyItemsTest {
     static CheckoutOverviewPage checkoutOverviewPage;
     static Properties properties;
 
+    //variables for the names of products
+    private String backpack = "Sauce Labs Backpack";
+    private String bikeLight = "Sauce Labs Bike Light";
+    private String boltTShirt = "Sauce Labs Bolt T-Shirt";
+    private String fleeceJacket = "Sauce Labs Fleece Jacket";
+    private String onesie = "Sauce Labs Onesie";
+    private String allTheThings = "Test.allTheThings() T-Shirt (Red)";
+
     @BeforeAll
     public static void setUpAll() {
         properties = InitProperties.getInstance();
@@ -49,7 +57,7 @@ public class BuyItemsTest {
         assertEquals("Checkout: Your Information", checkoutInfoPage.getCheckoutInfoPageTitle());
         checkoutInfoPage.checkoutSuccessfully("Standard", "User", "1234");
         assertEquals("Checkout: Overview", checkoutOverviewPage.getOverviewPageTitle());
-        assertEquals(List.of("Sauce Labs Backpack"),checkoutOverviewPage.getInventoryItemNameList());
+        assertEquals(List.of(backpack),checkoutOverviewPage.getInventoryItemNameList());
         checkoutOverviewPage.clickFinishBtn();
         assertEquals("Checkout: Complete!", checkoutCompletePage.getCheckoutCompletePageTitle());
         assertEquals("Thank you for your order!",checkoutCompletePage.getCompleteHeaderText());
@@ -65,7 +73,7 @@ public class BuyItemsTest {
         inventoryPage.addAllItemsAndClickCart();
         cartPage.clickCheckoutBtn();
         checkoutInfoPage.checkoutSuccessfully("Standard", "User", "1234");
-        assertEquals(List.of("Sauce Labs Backpack", "Sauce Labs Bike Light", "Sauce Labs Bolt T-Shirt", "Sauce Labs Fleece Jacket", "Sauce Labs Onesie", "Test.allTheThings() T-Shirt (Red)"),checkoutOverviewPage.getInventoryItemNameList());
+        assertEquals(List.of(backpack, bikeLight, boltTShirt, fleeceJacket, onesie, allTheThings),checkoutOverviewPage.getInventoryItemNameList());
         checkoutOverviewPage.clickFinishBtn();
         checkoutCompletePage.clickBackHomeBtn();
         inventoryPage.clickOnMenuAndLogout();
@@ -76,10 +84,10 @@ public class BuyItemsTest {
     public void testBuyingTwoItemsButDeletingOne() {
         mainPage.login(properties.getProperty("standardUserName"), properties.getProperty("password"));
         inventoryPage.addFleeceJacketAndOnesieAndClickCart();
-        cartPage.clickRemoveBtn("Sauce Labs Onesie");
+        cartPage.clickRemoveBtn(onesie);
         cartPage.clickCheckoutBtn();
         checkoutInfoPage.checkoutSuccessfully("Standard", "User", "1234");
-        assertEquals(List.of("Sauce Labs Fleece Jacket"),checkoutOverviewPage.getInventoryItemNameList());
+        assertEquals(List.of(fleeceJacket),checkoutOverviewPage.getInventoryItemNameList());
         checkoutOverviewPage.clickFinishBtn();
         checkoutCompletePage.clickBackHomeBtn();
         inventoryPage.clickOnMenuAndLogout();
@@ -94,7 +102,7 @@ public class BuyItemsTest {
         inventoryPage.addAllTheThingsTShirtAndClickCart();
         cartPage.clickCheckoutBtn();
         checkoutInfoPage.checkoutSuccessfully("Standard", "User", "1234");
-        assertEquals(List.of("Sauce Labs Backpack", "Test.allTheThings() T-Shirt (Red)"),checkoutOverviewPage.getInventoryItemNameList());
+        assertEquals(List.of(backpack, allTheThings),checkoutOverviewPage.getInventoryItemNameList());
         checkoutOverviewPage.clickFinishBtn();
         checkoutCompletePage.clickBackHomeBtn();
         inventoryPage.clickOnMenuAndLogout();
@@ -111,7 +119,7 @@ public class BuyItemsTest {
         inventoryPage.addAllItemsAndClickCart();
         cartPage.clickCheckoutBtn();
         checkoutInfoPage.checkoutSuccessfully("Problem", "User", "1234");
-        assertEquals(List.of("Sauce Labs Backpack", "Sauce Labs Bike Light", "Sauce Labs Bolt T-Shirt", "Sauce Labs Fleece Jacket", "Sauce Labs Onesie", "Test.allTheThings() T-Shirt (Red)"),checkoutOverviewPage.getInventoryItemNameList());
+        assertEquals(List.of(backpack, bikeLight, boltTShirt, fleeceJacket, onesie, allTheThings),checkoutOverviewPage.getInventoryItemNameList());
         checkoutOverviewPage.clickFinishBtn();
         checkoutCompletePage.clickBackHomeBtn();
         inventoryPage.clickOnMenuAndLogout();
