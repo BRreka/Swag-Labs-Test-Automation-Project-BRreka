@@ -1,7 +1,6 @@
 package com.codecool.swaglabstestautomationprojectbrreka.pages;
 
-import com.codecool.swaglabstestautomationprojectbrreka.util.WaitUtil;
-import com.codecool.swaglabstestautomationprojectbrreka.util.WebdriverUtil;
+import com.codecool.swaglabstestautomationprojectbrreka.util.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
 

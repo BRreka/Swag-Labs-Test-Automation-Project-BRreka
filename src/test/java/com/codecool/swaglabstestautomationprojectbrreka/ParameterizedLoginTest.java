@@ -1,8 +1,7 @@
 package com.codecool.swaglabstestautomationprojectbrreka;
 
 import com.codecool.swaglabstestautomationprojectbrreka.pages.*;
-import com.codecool.swaglabstestautomationprojectbrreka.util.InitProperties;
-import com.codecool.swaglabstestautomationprojectbrreka.util.WebdriverUtil;
+import com.codecool.swaglabstestautomationprojectbrreka.util.*;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.*;
 import org.junit.jupiter.params.provider.*;
