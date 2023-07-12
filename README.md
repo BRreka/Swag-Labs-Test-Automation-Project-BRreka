@@ -9,10 +9,8 @@ Some tests are set up to fail on purpose, it is stated which in each case in the
 
 ## Technologies used
 + Java 17
-+ Selenium
-+ Webdrivermanager (Chromedriver)
-+ Junit5
-+ Junit5 params
++ Selenium with Webdrivermanager (Chromedriver)
++ Junit5 (with params)
 
 ## Installation
 
