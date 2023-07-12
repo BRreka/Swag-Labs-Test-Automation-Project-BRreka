@@ -1,8 +1,8 @@
 package com.codecool.swaglabstestautomationprojectbrreka;
 
 import com.codecool.swaglabstestautomationprojectbrreka.pages.*;
-import com.codecool.swaglabstestautomationprojectbrreka.util.InitPropertiesClass;
-import com.codecool.swaglabstestautomationprojectbrreka.util.WebdriverClass;
+import com.codecool.swaglabstestautomationprojectbrreka.util.InitProperties;
+import com.codecool.swaglabstestautomationprojectbrreka.util.WebdriverUtil;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.*;
 import org.junit.jupiter.params.provider.*;
@@ -26,7 +26,7 @@ public class ParameterizedLoginTest {
 
     @BeforeAll
     public static void setUpAll() {
-        properties = InitPropertiesClass.getInstance();
+        properties = InitProperties.getInstance();
     }
     @BeforeEach
     public void setUp() {
@@ -72,6 +72,6 @@ public class ParameterizedLoginTest {
 
     @AfterEach
     public void tearDown() {
-        WebdriverClass.quit();
+        WebdriverUtil.quit();
     }
 }

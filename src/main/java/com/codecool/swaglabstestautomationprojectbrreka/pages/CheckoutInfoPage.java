@@ -1,13 +1,13 @@
 package com.codecool.swaglabstestautomationprojectbrreka.pages;
 
-import com.codecool.swaglabstestautomationprojectbrreka.util.WaitClass;
-import com.codecool.swaglabstestautomationprojectbrreka.util.WebdriverClass;
+import com.codecool.swaglabstestautomationprojectbrreka.util.WaitUtil;
+import com.codecool.swaglabstestautomationprojectbrreka.util.WebdriverUtil;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
 
 public class CheckoutInfoPage {
 
-    private final WebDriver driver = WebdriverClass.getInstance();
+    private final WebDriver driver = WebdriverUtil.getInstance();
     @FindBy(xpath = "//span[text()='Checkout: Your Information']")
     private WebElement checkoutInfoPageTitle;
 
@@ -34,27 +34,27 @@ public class CheckoutInfoPage {
     }
 
     public String getCheckoutInfoPageTitle() {
-        WaitClass.waitUntilVisible(driver, checkoutInfoPageTitle);
+        WaitUtil.waitUntilVisible(driver, checkoutInfoPageTitle);
         return checkoutInfoPageTitle.getText();
     }
 
     public String getErrorMessage() {
-        WaitClass.waitUntilVisible(driver, errorMessage);
+        WaitUtil.waitUntilVisible(driver, errorMessage);
         return errorMessage.getText();
     }
 
     public void enterFirstName(String firstNameString) {
-        WaitClass.waitUntilVisible(driver, firstNameField);
+        WaitUtil.waitUntilVisible(driver, firstNameField);
         firstNameField.sendKeys(firstNameString);
     }
 
     public void enterLastName(String lastNameString) {
-        WaitClass.waitUntilVisible(driver, lastNameField);
+        WaitUtil.waitUntilVisible(driver, lastNameField);
         lastNameField.sendKeys(lastNameString);
     }
 
     public void enterPostalCode(String postalCodeString) {
-        WaitClass.waitUntilVisible(driver, zipCodeField);
+        WaitUtil.waitUntilVisible(driver, zipCodeField);
         zipCodeField.sendKeys(postalCodeString);
     }
 
@@ -64,12 +64,12 @@ public class CheckoutInfoPage {
     }
 
     public void clickCancelBtn() {
-        WaitClass.waitUntilClickable(driver, cancelBtn);
+        WaitUtil.waitUntilClickable(driver, cancelBtn);
         cancelBtn.click();
     }
 
     public void checkoutSuccessfully(String firstNameString, String lastNameString, String postalCodeString) {
-        WaitClass.waitUntilClickable(driver, continueBtn);
+        WaitUtil.waitUntilClickable(driver, continueBtn);
         enterFirstName(firstNameString);
         enterLastName(lastNameString);
         enterPostalCode(postalCodeString);

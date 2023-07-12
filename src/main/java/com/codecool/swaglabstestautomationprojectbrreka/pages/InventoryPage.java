@@ -1,13 +1,13 @@
 package com.codecool.swaglabstestautomationprojectbrreka.pages;
 
-import com.codecool.swaglabstestautomationprojectbrreka.util.WaitClass;
-import com.codecool.swaglabstestautomationprojectbrreka.util.WebdriverClass;
+import com.codecool.swaglabstestautomationprojectbrreka.util.WaitUtil;
+import com.codecool.swaglabstestautomationprojectbrreka.util.WebdriverUtil;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
 
 public class InventoryPage {
 
-    private final WebDriver driver = WebdriverClass.getInstance();
+    private final WebDriver driver = WebdriverUtil.getInstance();
 
     @FindBy(xpath = "//div[@class='app_logo']")
     private WebElement pageTitle;
@@ -66,59 +66,59 @@ public class InventoryPage {
     }
 
     public String getPageTitleText() {
-        WaitClass.waitUntilVisible(driver, pageTitle);
+        WaitUtil.waitUntilVisible(driver, pageTitle);
         return pageTitle.getText();
     }
 
     public void clickShoppingCart() {
-        WaitClass.waitUntilClickable(driver, shoppingCartLink);
+        WaitUtil.waitUntilClickable(driver, shoppingCartLink);
         shoppingCartLink.click();
     }
 
 
     //add things to cart separately
     public void addBackpackToCart() {
-        WaitClass.waitUntilClickable(driver,addBackPackToCartButton);
+        WaitUtil.waitUntilClickable(driver,addBackPackToCartButton);
         addBackPackToCartButton.click();
     }
 
     public void addBikeLightToCart() {
-        WaitClass.waitUntilClickable(driver, addBikeLightToCartButton);
+        WaitUtil.waitUntilClickable(driver, addBikeLightToCartButton);
         addBikeLightToCartButton.click();
     }
 
     public void addBoltTShirtToCart() {
-        WaitClass.waitUntilClickable(driver, addBoltTShirtToCartButton);
+        WaitUtil.waitUntilClickable(driver, addBoltTShirtToCartButton);
         addBoltTShirtToCartButton.click();
     }
 
     public void addFleeceJacketToCart() {
-        WaitClass.waitUntilClickable(driver, addFleeceJacketToCartButton);
+        WaitUtil.waitUntilClickable(driver, addFleeceJacketToCartButton);
         addFleeceJacketToCartButton.click();
     }
 
     public void addOnesieToCart() {
-        WaitClass.waitUntilClickable(driver, addOnesieToCartButton);
+        WaitUtil.waitUntilClickable(driver, addOnesieToCartButton);
         addOnesieToCartButton.click();
     }
 
     public void addAllTheThingsTShirtToCart() {
-        WaitClass.waitUntilClickable(driver, addAllTheThingsTShirtToCartButton);
+        WaitUtil.waitUntilClickable(driver, addAllTheThingsTShirtToCartButton);
         addAllTheThingsTShirtToCartButton.click();
     }
 
     public void clickHamburgerMenu() {
-        WaitClass.waitUntilClickable(driver, burgerMenuButton);
+        WaitUtil.waitUntilClickable(driver, burgerMenuButton);
         burgerMenuButton.click();
     }
 
     public boolean doesLogoutButtonExist() {
-        WaitClass.waitUntilVisible(driver,logOutButton);
+        WaitUtil.waitUntilVisible(driver,logOutButton);
         return logOutButton.isDisplayed();
     }
 
     public void clickLogoutButton() {
-        WaitClass.waitUntilClickable(driver, logOutButton);
+        WaitUtil.waitUntilClickable(driver, logOutButton);
         logOutButton.click();
     }
 

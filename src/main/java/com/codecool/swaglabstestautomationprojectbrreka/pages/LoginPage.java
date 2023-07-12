@@ -1,7 +1,7 @@
 package com.codecool.swaglabstestautomationprojectbrreka.pages;
 
-import com.codecool.swaglabstestautomationprojectbrreka.util.WaitClass;
-import com.codecool.swaglabstestautomationprojectbrreka.util.WebdriverClass;
+import com.codecool.swaglabstestautomationprojectbrreka.util.WaitUtil;
+import com.codecool.swaglabstestautomationprojectbrreka.util.WebdriverUtil;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
 
@@ -9,7 +9,7 @@ import java.time.Duration;
 
 public class LoginPage {
 
-    private final WebDriver driver = WebdriverClass.getInstance();
+    private final WebDriver driver = WebdriverUtil.getInstance();
 
     @FindBy(xpath = "//input[@name='user-name']")
     private WebElement userNameField;
@@ -46,7 +46,7 @@ public class LoginPage {
     }
 
     public boolean doesLoginButtonExist() {
-        WaitClass.waitUntilClickable(driver, loginButton);
+        WaitUtil.waitUntilClickable(driver, loginButton);
         return loginButton.isDisplayed();
     }
 

@@ -1,7 +1,7 @@
 package com.codecool.swaglabstestautomationprojectbrreka.pages;
 
-import com.codecool.swaglabstestautomationprojectbrreka.util.WaitClass;
-import com.codecool.swaglabstestautomationprojectbrreka.util.WebdriverClass;
+import com.codecool.swaglabstestautomationprojectbrreka.util.WaitUtil;
+import com.codecool.swaglabstestautomationprojectbrreka.util.WebdriverUtil;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
 
@@ -10,7 +10,7 @@ import java.util.stream.*;
 
 public class CartPage {
 
-    private final WebDriver driver = WebdriverClass.getInstance();
+    private final WebDriver driver = WebdriverUtil.getInstance();
     @FindBy(xpath = "//span[text()='Your Cart']")
     private WebElement yourCartTitle;
 
@@ -31,17 +31,17 @@ public class CartPage {
     }
 
     public String getCartTitle() {
-        WaitClass.waitUntilVisible(driver, yourCartTitle);
+        WaitUtil.waitUntilVisible(driver, yourCartTitle);
         return yourCartTitle.getText();
     }
 
     public void clickContinueShopping() {
-        WaitClass.waitUntilClickable(driver, continueShoppingBtn);
+        WaitUtil.waitUntilClickable(driver, continueShoppingBtn);
         continueShoppingBtn.click();
     }
 
     public void clickCheckoutBtn() {
-        WaitClass.waitUntilClickable(driver, checkoutBtn);
+        WaitUtil.waitUntilClickable(driver, checkoutBtn);
         checkoutBtn.click();
     }
 

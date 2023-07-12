@@ -5,15 +5,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class WebdriverClass {
+public class WebdriverUtil {
     private static volatile WebDriver webDriverInstance = null;
 
-    private WebdriverClass() {}
+    private WebdriverUtil() {}
 
     public static WebDriver getInstance() {
         WebDriver driver = webDriverInstance;
         if(driver == null) {
-            synchronized (WebdriverClass.class) {
+            synchronized (WebdriverUtil.class) {
                 driver = webDriverInstance;
                 if(driver == null) {
                     WebDriverManager.chromedriver().setup();

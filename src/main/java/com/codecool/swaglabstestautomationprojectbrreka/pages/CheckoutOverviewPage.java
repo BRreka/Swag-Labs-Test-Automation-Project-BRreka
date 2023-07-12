@@ -1,7 +1,7 @@
 package com.codecool.swaglabstestautomationprojectbrreka.pages;
 
-import com.codecool.swaglabstestautomationprojectbrreka.util.WaitClass;
-import com.codecool.swaglabstestautomationprojectbrreka.util.WebdriverClass;
+import com.codecool.swaglabstestautomationprojectbrreka.util.WaitUtil;
+import com.codecool.swaglabstestautomationprojectbrreka.util.WebdriverUtil;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.*;
 
@@ -9,7 +9,7 @@ import java.util.*;
 
 public class CheckoutOverviewPage {
 
-    private final WebDriver driver = WebdriverClass.getInstance();
+    private final WebDriver driver = WebdriverUtil.getInstance();
     @FindBy(xpath = "//span[text()='Checkout: Overview']")
     private WebElement checkoutOverviewPageTitle;
 
@@ -27,7 +27,7 @@ public class CheckoutOverviewPage {
     }
 
     public String getOverviewPageTitle() {
-        WaitClass.waitUntilClickable(driver, checkoutOverviewPageTitle);
+        WaitUtil.waitUntilClickable(driver, checkoutOverviewPageTitle);
         return checkoutOverviewPageTitle.getText();
     }
 
@@ -40,12 +40,12 @@ public class CheckoutOverviewPage {
     }
 
     public void clickCancelBtn() {
-        WaitClass.waitUntilClickable(driver, cancelBtn);
+        WaitUtil.waitUntilClickable(driver, cancelBtn);
         cancelBtn.click();
     }
 
     public void clickFinishBtn() {
-        WaitClass.waitUntilClickable(driver, finishBtn);
+        WaitUtil.waitUntilClickable(driver, finishBtn);
         finishBtn.click();
     }
 
