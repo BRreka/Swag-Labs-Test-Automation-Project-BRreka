@@ -40,5 +40,5 @@ wrongPassword =
 you can find the corresponding usernames and password on the [swag labs](https://www.saucedemo.com/) website,
 for the wrong password just type in some random letters
 
-4. in `InitPropertiesClass` utility class, change the string `config.properties path` to the path where the previously created `config.properties` file exists on your system
+4. in `InitPropertiesClass` utility class, change the constant `CONFIG_PROPERTIES_PATH` from `null` to the path where the previously created `config.properties` file exists on your system
 5. You can now run the tests
