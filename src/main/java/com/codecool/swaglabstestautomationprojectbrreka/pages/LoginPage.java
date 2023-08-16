@@ -26,21 +26,21 @@ public class LoginPage {
         PageFactory.initElements(driver,this);
     }
 
-    private void manageDriverInit() {
+    public void manageDriverInit() {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://www.saucedemo.com/");
     }
 
-    private void enterUserName(String userNameString) {
+    public void enterUserName(String userNameString) {
         userNameField.sendKeys(userNameString);
     }
 
-    private void enterPassword(String passwordString) {
+    public void enterPassword(String passwordString) {
         passwordField.sendKeys(passwordString);
     }
 
-    private void clickLoginButton() {
+    public void clickLoginButton() {
         loginButton.click();
     }
 
@@ -59,6 +59,10 @@ public class LoginPage {
         enterUserName(userNameString);
         enterPassword(passwordString);
         clickLoginButton();
+    }
+    public void enterUserNameAndPassword(String userNameString, String passwordString) {
+        enterUserName(userNameString);
+        enterPassword(passwordString);
     }
 
 }
