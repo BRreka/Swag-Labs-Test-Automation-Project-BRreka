@@ -11,16 +11,6 @@ Feature: Login Action
     When I click on the login button
     Then I should be logged in successfully
 
-  #Scenario Outline: Unsuccessful Login with invalid or empty password
-    #Given I have entered invalid "<username>" and "<password>"
-    #When I click on the login button
-    #Then I should see an error message indicating "error_message"
-
-    #Examples:
-      #| username      | password | error_message                                                             |  |  |
-      #| standard_user |       | Epic sadface: Password is required                                        |  |  |
-      #| standard_user | sdkfl | Epic sadface: Username and password do not match any user in this service |  |  |
-
   Scenario: Unsuccessful Login with invalid password
     Given I have entered valid username but invalid password
     When I click on the login button

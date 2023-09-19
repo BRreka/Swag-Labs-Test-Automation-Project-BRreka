@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 public class InitProperties {
-    private static final String CONFIG_PROPERTIES_PATH = null;
+    private static final String CONFIG_PROPERTIES_PATH = "C:\\Users\\bencz\\Documents\\InvisiSh9\\TECH\\JAVAPROJECTS\\Swag-Labs-Test-Automation-Project-BRreka\\src\\main\\java\\com\\codecool\\swaglabstestautomationprojectbrreka\\config\\config.properties";
     private static volatile Properties properties;
 
     private InitProperties() {}
